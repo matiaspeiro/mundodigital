@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/cliente',()=>{
-    console.log('Hola desde el servidor')
+    console.log('servidor respondiendo a cliente')
 })
 
 app.listen(PORT, ()=>{
