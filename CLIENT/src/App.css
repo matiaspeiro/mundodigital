@@ -1,0 +1,97 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ede6e6;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+nav ul li{
+    margin: 015px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li a:hover{
+    color: #ffcc00;
+}
+
+
+h1, h2{
+    text-align: center;
+    color:  #333;
+}
+
+button{
+    padding: 10px 15px;
+    margin:  5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #0056b3;
+}
+
+.CharacterCard{
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 04px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    margin: 15px;
+    display: inline-block;
+    width: 200px;
+}
+
+.CharacterCard img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.CharacterCard h3{
+    color:#333;
+    margin-bottom: 10px;
+}
+.CharacterCard p{
+    color: #777;
+    margin: 5px 0;
+}
+
+
+
+@media (max-width:768px) {
+    .container{
+        width: 95%;
+    }
+    nav ul{
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .CharacterCard{
+        width: 100%;
+        margin: 10px 0;
+    }
+
+}
