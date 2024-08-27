@@ -3,24 +3,30 @@ import axios from "axios";
 import CharacterCard from "./CharacterCard";
 const MainHome = () => {
   const [contador, setContador] = useState(0);
-  const [nombre, setNombre] = useState("");
-  const [status, setStatus] = useState("OOOO");
-  const [species, setSpecies] = useState("OOOO");
-  const [personajes, setPersonajes] = useState([]);
+  const [productos, setProductos] = useState([]);
+  const [searchTerm,setSearchTerm] = useState("");
 
-  useEffect(() => {
-    axios
-      .get("https://rickandmortyapi.com/api/character")
-      .then((response) => {
-        setPersonajes(response.data.results);
-      })
-      .then(() => {
-        console.log(personajes);
-      })
-      .catch((error) => {
+  useEffect(()=>{
+    const fetchProductos = async ()=>{
+      try {
+        const response = await axios.get("http://localhost:3000/api/productos");
+        setProductos(response.data)
+      } catch (error) {
         console.error("error al obtener los datos ", error);
-      });
-  }, [contador]);
+      }
+    }
+    fetchProductos();
+  },[])
+
+
+    const handleSearch = (evento)=>{
+        setSearchTerm(evento.target.value)
+    } 
+
+  const filteredProductos = productos.filter(
+    (producto)=>  producto.nombre.toLowerCase().includes(searchTerm.toLowerCase()) || producto.descripcion.includes(searchTerm.toLowerCase())
+  )
+
 
   return (
     <div>
@@ -32,10 +38,13 @@ const MainHome = () => {
       <br />
       <hr />
       <br />
+      <label htmlFor="">Buscar: </label>
+        <input type="text" placeholder="Buscar productos..."  onChange={handleSearch}/>
       <div>
-        {personajes.map(
-            personaje =>(
-              <CharacterCard img={personaje.image} nombre={personaje.name} status={personaje.status} species={personaje.species} />
+        
+        {filteredProductos.map(
+          producto =>(
+              <CharacterCard key={producto.id} img={producto.imagen} nombre={producto.nombre} descripcion={producto.descripcion} precio={producto.precio} stock={producto.stock}/>
             )
         )}
       </div>
