@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from './Button'
 
-const CharacterCard = ({img,nombre,descripcion,precio,stock}) => {
+const CharacterCard = ({img,nombre,descripcion,precio,stock, onAgregar}) => {
   return (
     <div  className='CharacterCard'>
         <img src={img} alt="" />
@@ -9,7 +9,7 @@ const CharacterCard = ({img,nombre,descripcion,precio,stock}) => {
         <p>Descripcion: {descripcion}</p>
         <p>Precio:$ {stock}</p>
         <p>Precio: {precio}</p>
-        <Button></Button>
+        <Button onClick={onAgregar}/>
     </div>
   )
 }

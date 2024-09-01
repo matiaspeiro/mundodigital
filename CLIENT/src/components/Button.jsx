@@ -2,10 +2,10 @@ import React from 'react'
 
 
 
-const Button = () => {
-    //funcion para descargar
+const Button = ({onClick}) => {
+   
   return (
-    <button>Agregar al carrito</button>
+    <button onClick={onClick} >Agregar al carrito</button>
   )
 }
 

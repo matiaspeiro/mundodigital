@@ -85,3 +85,32 @@ VALUES
 
 
 select * from productos;
+
+
+create table Orders(
+	id int auto_increment primary key,
+    total decimal(10,2) not null,
+    date timestamp default current_timestamp
+);
+
+select * from Orders;
+
+
+Create table OrderDetails(
+	id int auto_increment primary key,
+    order_id int,
+    product_id int,
+	quantity int not null,
+    price decimal(10,2) not null,
+    foreign key(order_id) references Orders(id),
+    foreign key(product_id) references productos(id)
+);
+
+
+INSERT INTO Orders (total) VALUES (650.00);
+
+
+select OD.id,OD.order_id as 'Factura', P.nombre as 'Producto' from OrderDetails as OD
+join Orders as O on O.id = OD.order_id
+join productos as P on P.id = OD.product_id
+where OD.order_id = 6;
