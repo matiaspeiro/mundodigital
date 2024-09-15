@@ -109,8 +109,10 @@ Create table OrderDetails(
 
 INSERT INTO Orders (total) VALUES (650.00);
 
-
+select * from OrderDetails;
+select * from Orders;
 select OD.id,OD.order_id as 'Factura', P.nombre as 'Producto' from OrderDetails as OD
 join Orders as O on O.id = OD.order_id
 join productos as P on P.id = OD.product_id
-where OD.order_id = 6;
+where OD.order_id = 10;
+
