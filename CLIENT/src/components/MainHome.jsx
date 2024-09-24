@@ -101,14 +101,18 @@ const MainHome = () => {
 
   return (
     <div>
-      <h1>Bienvenidos a nuestra tienda</h1>
-      <label htmlFor="search">Buscar: </label>
+      <h1>MUNDO DIGITAL</h1>
+      <div class="buscador">
+      <label htmlFor="search">BUSCAR: </label
+      >
       <input
         id="search"
         type="text"
         placeholder="Buscar productos..."
         onChange={handleSearch}
       />
+      </div>
+    
       <ProductList productos={filteredProductos} onAgregar={agregarCarrito} />
       <Cart
         carrito={carrito}

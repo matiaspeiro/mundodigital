@@ -2,12 +2,17 @@ body{
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ede6e6;
+    background-image: url(images/fondo1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 .container{
     width: 80%;
     margin: 0 auto;
     padding: 20px;
+
 }
 
 nav ul{
@@ -33,7 +38,7 @@ nav ul li a:hover{
 
 h1, h2{
     text-align: center;
-    color:  #333;
+    color:  #ffffff;
 }
 
 button{
@@ -51,18 +56,18 @@ button:hover{
 }
 
 .CharacterCard{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 8px;
-    box-shadow: 04px 8px rgba(0,0,0,0.1);
+    box-shadow: 0px 04px 8px rgba(0,0,0,0.1);
     padding: 20px;
     text-align: center;
-    margin: 15px;
+    margin: 12px;
     display: inline-block;
     width: 200px;
 }
 
 .CharacterCard img{
-    width: 100%;
+    width: 200px;
     height: 200px;
     border-radius: 8px;
 }
@@ -95,3 +100,22 @@ button:hover{
     }
 
 }
+li{
+    color: aliceblue;
+}
+p{
+    color: aliceblue;
+}
+.buscador {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    margin: 20px;          
+    color: antiquewhite;  
+  }
+  
+  .search-container label,
+  .search-container input {
+    margin: 0 20px;          
+  }
+  
