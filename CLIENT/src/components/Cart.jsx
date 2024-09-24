@@ -4,7 +4,7 @@ const Cart = ({carrito,onActualizarCantidad,onEliminar,onPagar}) => {
     //console.log('1')
   return (
     <div>
-        <h2>Carrito de Compras</h2>
+        <h2>CARRITO DE COMPRAS</h2>
         {carrito.length === 0 ? (<p> No hay productos en el carrito</p>) : 
         (<ul>
             {

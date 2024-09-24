@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div style={{color:'white'}}>¡Seguinos en nuestras redes! @mundodigital</div>
   )
 }
 
